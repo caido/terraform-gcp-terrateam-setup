@@ -24,7 +24,7 @@ resource "google_iam_workload_identity_pool_provider" "terrateam_provider" {
     "attribute.repository_owner" = "assertion.repository_owner"
   }
 
-  attribute_condition = "assertion.repository_owner=='${var.github_org}'"
+  attribute_condition = "assertion.repository_owner=='${var.github_org}' && assertion.repository=='${var.github_repo}'"
 
   oidc {
     issuer_uri = "https://token.actions.githubusercontent.com"

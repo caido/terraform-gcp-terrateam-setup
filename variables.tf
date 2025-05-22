@@ -16,6 +16,11 @@ variable "github_org" {
   }
 }
 
+variable "github_repo" {
+  description = "The GitHub repository for which the Workload Identity Provider is set up"
+  type        = string
+}
+
 variable "service_account_description" {
   description = "Description for the service account"
   type        = string
